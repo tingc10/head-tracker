@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/headtrackr.min.js"></script>
+<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/stylesheet.css"/>
+</head>
+<body>
+	<div id="button-container">
+	<button id="button_reset" type="button">Reset Facetrack</button>
+	<br/>
+	<button id="button_locateFace" type="button">See Face Position</button>
+	<br/>
+	<button id="button_turnOff" class="on" type="button">Stop Facetrack</button>
+	<div>
+		<button id="button_sharpen" class="off" type="button" >Sharpen Image</button>
+		<div id="weight-container">
+			<input id="weight1" type="text" value="0">
+			<input id="weight2" type="text" value="-1">
+			<input id="weight3" type="text" value="0">
+			<br/>
+			<input id="weight4" type="text" value="-1">
+			<input id="weight5" type="text" value="5">
+			<input id="weight6" type="text" value="-1">
+			<br/>
+			<input id="weight7" type="text" value="0">
+			<input id="weight8" type="text" value="-1">
+			<input id="weight9" type="text" value="0">
+		</div>
+
+	</div>
+	<div>
+		<button id="button_contrast" class="off" type="button">Contrast Image</button>
+		<input id="contrast_value" class="input_value" type="text" value="30">
+	</div>
+	<div>
+		<button id="button_brighten" class="off" type="button">Brighten Image</button>
+		<input id="brighten_value" class="input_value" type="text" value="30">
+	</div>
+	<button id="button_sqwiggle" class="off" type="button">Toggle Sqwiggle</button>
+</div>
+<div class="main-body">
+	<div id="status">
+		<div id="gUMMessage"></div>
+		<div>Status : <span id="headtrackerMessage"></span></div>
+	</div>
+
+	<div class="video-container">
+		<div class="container">
+			<!-- <canvas class="window-size" id="compare" style="display:none"></canvas> -->
+			<video class="window-size" id="vid" autoplay loop ></video>
+			<!-- <img id="still_image" src="canvas_test.png"></img> -->
+			<canvas class="window-size" id="overlay" ></canvas>
+			<canvas class="sqwiggle" id="transition_overlay1"></canvas>
+			<canvas class="sqwiggle" id="transition_overlay2"></canvas>
+			<canvas id="bubble-overlay"></canvas>
+
+		</div>
+		<video class="compare-video" id="comparison-vid" autoplay loop></video>
+	</div>
+</div>
+
+<!-- <canvas id="debug" width="320" height="240" style="position: absolute; top: 0px; z-index: 100002; display: none;"></canvas> -->
+
+
+<script src="js/filter.js"></script>
+<script src="js/blur.js"></script>
+<script src="js/bubble.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
